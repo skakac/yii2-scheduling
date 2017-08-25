@@ -170,7 +170,7 @@ class Event extends Component
         if ($this->_timezone) {
             $date->setTimezone($this->_timezone);
         }
-        return CronExpression::factory($this->_expression)->isDue($date);
+        return CronExpression::factory($this->_expression)->isDue($date->format('Y-m-d H:i:s'));
     }
 
     /**
